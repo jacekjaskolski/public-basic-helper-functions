@@ -40,7 +40,7 @@ def intersection(L1, L2):
       
 # definicja najbliższego punktu
 def closest_node(node, nodes):
-    from scipy.spatial import distance
+    from scipy.spatial import distance # this probably shouldn't be here , but doesn't work if called outside def (?)
     distances = distance.cdist([node], nodes)
     closest_index = distances.argmin()
     dist = distances.min()
