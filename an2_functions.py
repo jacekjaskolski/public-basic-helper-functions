@@ -1,7 +1,6 @@
 import math
 import numpy as np
 import requests
-from scipy.spatial import distance
 
 def cosangle_lines(line1,line2): # https://stackoverflow.com/a/23989588/5566957
   dx1 = line1[1][0] - line1[0][0]
@@ -41,6 +40,7 @@ def intersection(L1, L2):
       
 # definicja najbliższego punktu
 def closest_node(node, nodes):
+    from scipy.spatial import distance
     distances = distance.cdist([node], nodes)
     closest_index = distances.argmin()
     dist = distances.min()
